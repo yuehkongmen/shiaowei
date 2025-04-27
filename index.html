@@ -1,161 +1,293 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ShiaoWei Inc.</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; font-family: sans-serif;
-      background: white; color: #333;
-    }
-    .hero {
-      position: relative;
-      width: 100%; height: 480px;
-      background: url('images/persol_bg.png') center/cover no-repeat;
-    }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background-color: rgba(255,255,255,0.6);
-      display: flex; flex-direction: column;
-      justify-content: center; align-items: center; text-align: center;
-    }
-    .hero-overlay h1 {
-      font-size: 3rem; font-weight: 300; margin-bottom: 1rem;
-    }
-    .hero-overlay p {
-      font-size: 0.9rem; color: #666;
-    }
-    nav {
-      display: flex; justify-content: flex-end; gap: 1.5rem;
-      padding: 1rem 2rem; border-bottom: 1px solid #ddd;
-      font-size: 0.9rem; color: #666;
-    }
-    nav a { color: inherit; text-decoration: none; }
-    nav a:hover { color: #000; }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 0.75rem;
-      padding: 1.5rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .square {
-      aspect-ratio: 1 / 1;
-      background: #f5f5f5;
-      border-radius: 10px;
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-    }
-    .square img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.7);
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-    .overlay img {
-      max-width: 90vw;
-      max-height: 90vh;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-    }
-    .overlay .close {
-      position: fixed;
-      top: 20px;
-      right: 30px;
-      font-size: 2rem;
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    section {
-      max-width: 700px; margin: 4rem auto; padding: 0 1rem; text-align: center;
-    }
-    footer {
-      margin-top: 4rem; text-align: center;
-      color: #aaa; padding-bottom: 2rem;
-    }
-    button {
-      background: #333; color: white;
-      padding: 0.6rem 1.2rem; border: none;
-      border-radius: 8px; cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <div class="hero">
-    <div class="hero-overlay">
-      <h1>はたらいて、<br/>笑おう。</h1>
-      <p>ShiaoWei Inc. | 重新定義月工門</p>
-    </div>
-  </div>
-
-  <nav>
-    <a href="#portfolio">サービス紹介</a>
-    <a href="#about">会社情報</a>
-    <a href="#recruit">採用情報</a>
-    <a href="#">プレスルーム</a>
-    <a href="IG.html">Instagram</a>
-  </nav>
-
-  <main id="portfolio" class="gallery">
-    <div class="square" onclick="showImage('images/photo1.jpg')"><img src="images/photo1.jpg" alt="自拍肌肉裙子照" /></div>
-    <div class="square" onclick="showImage('images/photo2.jpg')"><img src="images/photo2.jpg" alt="坐捷運美女照" /></div>
-    <div class="square" onclick="showImage('images/photo3.jpg')"><img src="images/photo3.jpg" alt="自拍貓鬚特效照" /></div>
-    <div class="square" onclick="showImage('images/photo4.jpg')"><img src="images/photo4.jpg" alt="街舞裝扮照" /></div>
-    <div class="square" onclick="showImage('images/photo5.jpg')"><img src="images/photo5.jpg" alt="廣告牆合成照" /></div>
-    <div class="square" onclick="showImage('images/photo6.png')"><img src="images/photo6.png" alt="Coin Master 肛門照" /></div>
-    <div class="square" onclick="showImage('images/photo7.jpg')"><img src="images/photo7.jpg" alt="肛門崩潰名言照" /></div>
-  </main>
-
-  <section id="about">
-    <p>
-      私たちは、月工門とは単なる構造ではなく、未来への入り口だと信じています。
-      ShiaoWei は、その扉を通じて、創造・視覚・自己表現の新しい地平を切り拓きます。
-    </p>
-  </section>
-
-  <section id="recruit">
-    <h3>ShiaoWeiと一緒に働きませんか？</h3>
-    <p>現在募集はありませんが、あらゆる形式の門の応募を歓迎します。</p>
-    <button>お問い合わせ</button>
-  </section>
-
-  <footer>
-    ⓒ 2025 ShiaoWei. All Rights Reserved. | 月工門計画株式会社
-  </footer>
-
-  <div id="overlay" class="overlay" onclick="hideImage()">
-    <span class="close">&times;</span>
-    <img id="overlay-img" src="" alt="full" />
-  </div>
-
-  <script>
-    function showImage(src) {
-      const overlay = document.getElementById('overlay');
-      const img = document.getElementById('overlay-img');
-      img.src = src;
-      overlay.style.display = 'flex';
-    }
-    function hideImage() {
-      document.getElementById('overlay').style.display = 'none';
-    }
-    document.querySelector('.close').addEventListener('click', hideImage);
-  </script>
-</body>
-</html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="あきらめて、笑おう​。">
+    <meta name="description" content="">
+    <title>Home</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="index.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 7.7.3, nicepage.com">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,200,300,400,500,600,700,800,900">
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body data-home-page="Home.html" data-home-page-title="Home" data-path-to-root="./" data-include-products="false" class="u-body u-xxl-mode" data-lang="en"><header class="u-clearfix u-custom-color-6 u-header u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-header" id="header" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img class="u-expanded-height u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="images/logo.png" alt="" data-image-width="1024" data-image-height="1024"><div class="custom-expanded u-align-right u-list u-list-1">
+        <div class="u-repeater u-repeater-1">
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-1">
+              <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-hover-none u-none u-text-body-alt-color u-text-hover-custom-color-5 u-btn-1" href="#"> 月工門沿革 | <br>
+              </a>
+              <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-hover-none u-none u-text-body-alt-color u-text-hover-custom-color-5 u-btn-2" href="#">門縫通訊 | <br>
+              </a>
+              <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-hover-none u-none u-text-body-alt-color u-text-hover-custom-color-5 u-btn-3" href="#"> 門縫永續經營 | <br>
+              </a>
+              <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-hover-none u-none u-text-body-alt-color u-text-hover-custom-color-5 u-btn-4" href="#">投資月工門基金 | <br>
+              </a>
+              <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-hover-none u-none u-text-body-alt-color u-text-hover-custom-color-5 u-btn-5" href="#">招募​月工門勇者 | <br>
+              </a>
+              <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-hover-none u-none u-text-body-alt-color u-text-hover-custom-color-5 u-btn-6" href="#"> 招募月工門公主 | <br>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div></header>
+    <section class="u-clearfix u-container-align-center u-image u-valign-middle u-section-1" id="block-1" data-image-width="1172" data-image-height="659">
+      
+      
+      <h1 class="u-align-center u-custom-font u-hover-feature u-text u-text-default u-text-palette-5-light-3 u-text-1">あきらめて、<br>笑おう​。
+      </h1>
+      <p class="u-align-center u-custom-font u-text u-text-default u-text-palette-5-light-3 u-text-2"> 重新定義月工門</p>
+    </section>
+    <section class="u-clearfix u-section-2" id="sec-7dd3">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-sheet-1">
+        <a href="" class="u-align-center u-btn u-button-style u-custom-color-1 u-btn-1">+1 121 222 33 44<br>
+        </a>
+        <a href="IG.html" class="u-align-center u-btn u-button-style u-custom-color-1 u-btn-2">Instagram </a>
+      </div>
+    </section>
+    <section class="u-clearfix u-container-align-center-md u-white u-section-3" id="sec-8552">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <div class="u-container-align-center u-container-style u-custom-color-2 u-expanded-width u-group u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <div class="u-gallery u-layout-grid u-lightbox u-no-transition u-show-text-on-hover u-gallery-1">
+              <div class="u-gallery-inner u-gallery-inner-1">
+                <div class="u-effect-fade u-gallery-item">
+                  <div class="u-back-slide" data-image-width="1290" data-image-height="2796">
+                    <img class="u-back-image u-expanded" src="images/avatar.jpg">
+                  </div>
+                  <div class="u-over-slide u-shading u-over-slide-1"></div>
+                </div>
+                <div class="u-effect-fade u-gallery-item">
+                  <div class="u-back-slide" data-image-width="389" data-image-height="799">
+                    <img class="u-back-image u-expanded u-back-image-2" src="images/photo2.jpg">
+                  </div>
+                  <div class="u-over-slide u-shading u-over-slide-2"></div>
+                </div>
+                <div class="u-effect-fade u-gallery-item">
+                  <div class="u-back-slide" data-image-width="1536" data-image-height="2048">
+                    <img class="u-back-image u-expanded u-back-image-3" src="images/491921397_9661785560601427_7258767622571561632_n.jpg">
+                  </div>
+                  <div class="u-over-slide u-shading u-over-slide-3"></div>
+                </div>
+                <div class="u-effect-fade u-gallery-item">
+                  <div class="u-back-slide" data-image-width="1024" data-image-height="1024">
+                    <img class="u-back-image u-expanded" src="images/photo1.jpg">
+                  </div>
+                  <div class="u-over-slide u-shading u-over-slide-4"></div>
+                </div>
+                <div class="u-effect-fade u-gallery-item">
+                  <div class="u-back-slide" data-image-width="1536" data-image-height="2048">
+                    <img class="u-back-image u-expanded u-back-image-5" src="images/474115474_592550796973309_8506118663703752171_n.jpg">
+                  </div>
+                  <div class="u-over-slide u-shading u-over-slide-5"></div>
+                </div>
+                <div class="u-effect-fade u-gallery-item" data-image-width="717" data-image-height="902">
+                  <div class="u-back-slide">
+                    <img class="u-back-image u-expanded" src="images/494355493_1178406707351242_1434780686305569343_n.jpg">
+                  </div>
+                  <div class="u-over-slide u-shading u-over-slide-6"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="u-custom-font u-text u-text-default u-text-1">Story</h2>
+      </div>
+    </section>
+    <section class="u-clearfix u-container-align-center u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-valign-top-xxl u-section-4" id="block-11">
+      <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout" style="">
+          <div class="u-layout-row" style="">
+            <div class="u-align-left u-container-align-left u-container-style u-image u-layout-cell u-left-cell u-shading u-size-44 u-size-xs-60 u-image-1" src="" data-image-width="600" data-image-height="300">
+              <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-1" src="">
+                <h2 class="u-align-left u-text u-text-custom-color-3 u-text-default u-text-1"> 關於月工門 </h2>
+                <p class="u-align-left u-custom-font u-text u-text-2"> 我們相信，月工門不僅僅是一個結構，而是通往未來的入口。<br>ShiaoWei 將透過這扇門，開拓創造、視覺與自我表達的新境界。&nbsp;<br>想與 ShiaoWei 一起工作嗎？&nbsp;<br>目前雖然沒有職缺，但我們歡迎各種形式的主動應徵。
+                </p>
+                <a href="#" class="u-btn u-button-style u-custom-color-1 u-hover-palette-1-dark-1 u-btn-1"> Attack me</a>
+              </div>
+            </div>
+            <div class="u-align-left u-container-align-left u-container-style u-grey-5 u-layout-cell u-right-cell u-size-16 u-size-xs-60 u-layout-cell-2">
+              <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-white u-section-5" id="sec-99b6">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <h1 class="u-text u-text-1">Yuehkongmen Plans</h1>
+        <div class="u-expanded-width u-table u-table-responsive u-table-1">
+          <table class="u-table-entity">
+            <colgroup>
+              <col width="29.5%">
+              <col width="23%">
+              <col width="25%">
+              <col width="22.5%">
+            </colgroup>
+            <thead class="u-align-center u-table-header u-white u-table-header-1">
+              <tr style="height: 42px;">
+                <th class="u-align-left u-table-cell u-table-cell-1">Compare all plans </th>
+                <th class="u-custom-color-2 u-table-cell u-table-cell-2"><b>Starter</b>
+                </th>
+                <th class="u-palette-1-dark-2 u-table-cell u-table-cell-3"><b>Advance</b>
+                </th>
+                <th class="u-custom-color-5 u-table-cell u-table-cell-4"><b>Enterprise</b>
+                  <br>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="u-align-center u-custom-color-2 u-table-body u-table-body-1">
+              <tr style="height: 49px;">
+                <td class="u-align-left u-border-1 u-border-palette-5-dark-2 u-first-column u-table-cell">1st Month Management Cost</td>
+                <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">$ 400</td>
+                <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">$ 900</td>
+                <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">$ 1200</td>
+              </tr>
+              <tr style="height: 48px;">
+                <td class="u-align-left u-border-1 u-border-palette-5-dark-2 u-table-cell">Following Month</td>
+                <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell u-text-grey-60 u-table-cell-10">$ 300</td>
+                <td class="u-align-center u-border-2 u-border-no-left u-border-no-right u-border-palette-5-dark-2 u-table-cell u-text-grey-60 u-table-cell-11">$ 700</td>
+                <td class="u-border-2 u-border-palette-5-dark-2 u-table-cell u-text-custom-color-5 u-table-cell-12">$ 900</td>
+              </tr>
+              <tr style="height: 48px;">
+                <td class="u-align-left u-border-1 u-border-palette-5-dark-2 u-first-column u-table-cell">Delivery Time frame</td>
+                <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">3-6 Months</td>
+                <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">3-6 Months</td>
+                <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">3-6 Months</td>
+              </tr>
+              <tr style="height: 25px;">
+                <td class="u-align-left u-border-1 u-border-palette-5-dark-2 u-first-column u-table-cell u-table-cell-17">Shiaowei Carries You</td>
+                <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell u-table-cell-18">-</td>
+                <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell u-table-cell-19">&nbsp;<span class="u-icon"><svg class="u-svg-content" viewBox="0 -46 417.81333 417" style="width: 1em; height: 1em;"><path d="m159.988281 318.582031c-3.988281 4.011719-9.429687 6.25-15.082031 6.25s-11.09375-2.238281-15.082031-6.25l-120.449219-120.46875c-12.5-12.5-12.5-32.769531 0-45.246093l15.082031-15.085938c12.503907-12.5 32.75-12.5 45.25 0l75.199219 75.203125 203.199219-203.203125c12.503906-12.5 32.769531-12.5 45.25 0l15.082031 15.085938c12.5 12.5 12.5 32.765624 0 45.246093zm0 0"></path></svg></span>&nbsp;
+                </td>
+                <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell u-text-palette-1-base u-table-cell-20"><span class="u-icon u-text-custom-color-5"><svg class="u-svg-content" viewBox="0 -46 417.81333 417" style="width: 1em; height: 1em;"><path d="m159.988281 318.582031c-3.988281 4.011719-9.429687 6.25-15.082031 6.25s-11.09375-2.238281-15.082031-6.25l-120.449219-120.46875c-12.5-12.5-12.5-32.769531 0-45.246093l15.082031-15.085938c12.503907-12.5 32.75-12.5 45.25 0l75.199219 75.203125 203.199219-203.203125c12.503906-12.5 32.769531-12.5 45.25 0l15.082031 15.085938c12.5 12.5 12.5 32.765624 0 45.246093zm0 0"></path></svg></span>
+                </td>
+              </tr>
+              <tr style="height: 65px;">
+                <td class="u-align-left u-border-1 u-border-palette-5-dark-2 u-table-cell">Certificate</td>
+                <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell u-table-cell-22">-</td>
+                <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell u-table-cell-23">&nbsp;<span class="u-icon"><svg class="u-svg-content" viewBox="0 -46 417.81333 417" style="width: 1em; height: 1em;"><path d="m159.988281 318.582031c-3.988281 4.011719-9.429687 6.25-15.082031 6.25s-11.09375-2.238281-15.082031-6.25l-120.449219-120.46875c-12.5-12.5-12.5-32.769531 0-45.246093l15.082031-15.085938c12.503907-12.5 32.75-12.5 45.25 0l75.199219 75.203125 203.199219-203.203125c12.503906-12.5 32.769531-12.5 45.25 0l15.082031 15.085938c12.5 12.5 12.5 32.765624 0 45.246093zm0 0"></path></svg></span>&nbsp;
+                </td>
+                <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell u-text-palette-1-base u-table-cell-24">&nbsp;<span class="u-icon u-text-custom-color-5"><svg class="u-svg-content" viewBox="0 -46 417.81333 417" style="width: 1em; height: 1em;"><path d="m159.988281 318.582031c-3.988281 4.011719-9.429687 6.25-15.082031 6.25s-11.09375-2.238281-15.082031-6.25l-120.449219-120.46875c-12.5-12.5-12.5-32.769531 0-45.246093l15.082031-15.085938c12.503907-12.5 32.75-12.5 45.25 0l75.199219 75.203125 203.199219-203.203125c12.503906-12.5 32.769531-12.5 45.25 0l15.082031 15.085938c12.5 12.5 12.5 32.765624 0 45.246093zm0 0"></path></svg></span>&nbsp;
+                </td>
+              </tr>
+              <tr style="height: 73px;">
+                <td class="u-align-left u-border-1 u-border-palette-5-dark-2 u-first-column u-table-cell">Guranteed Keywords Ranking in First Page of Google</td>
+                <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">0</td>
+                <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">0</td>
+                <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">0</td>
+              </tr>
+              <tr style="height: 73px;">
+                <td class="u-align-left u-border-1 u-border-palette-5-dark-2 u-table-cell"></td>
+                <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">
+                  <a href="#" class="u-btn u-btn-round u-button-style u-custom-color-5 u-radius-50 u-text-body-alt-color u-btn-1">buy now</a>
+                </td>
+                <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">
+                  <a href="#" class="u-btn u-btn-round u-button-style u-custom-color-5 u-radius-50 u-text-body-alt-color u-btn-2">buy now</a>
+                </td>
+                <td class="u-border-1 u-border-palette-5-dark-2 u-table-cell">
+                  <a href="#" class="u-btn u-btn-round u-button-style u-custom-color-5 u-radius-50 u-text-body-alt-color u-btn-3">buy now</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+    </section>
+    <section class="u-clearfix u-custom-color-6 u-section-6" id="block-13">
+      <img class="u-expanded-height u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="images/logo.png" alt="" data-image-width="1024" data-image-height="1024">
+      <div class="custom-expanded u-align-right u-list u-list-1">
+        <div class="u-repeater u-repeater-1">
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-1">
+              <p class="u-align-right u-custom-font u-custom-item u-text u-text-default u-text-1">
+                <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-hover-feature u-hover-none u-none u-text-body-alt-color u-text-hover-custom-color-5 u-btn-1" href="#"> 月工門沿革 | <br>
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-2">
+              <p class="u-align-right u-custom-item u-text u-text-default u-text-2">
+                <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-hover-feature u-hover-none u-none u-text-body-alt-color u-text-hover-custom-color-5 u-btn-2" href="X">門縫通訊 | </a>
+              </p>
+            </div>
+          </div>
+          <div class="u-container-align-right u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-3">
+              <p class="u-align-right u-custom-item u-text u-text-default u-text-3">
+                <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-hover-feature u-hover-none u-none u-text-body-alt-color u-text-hover-custom-color-5 u-btn-3" href="x">門縫永續經營 |</a>
+              </p>
+            </div>
+          </div>
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-4">
+              <p class="u-align-right u-custom-item u-text u-text-default u-text-4">
+                <a class="u-btn u-button-link u-button-style u-custom-font u-hover-feature u-none u-text-body-alt-color u-text-hover-custom-color-5 u-btn-4" href="#"> 投資月工門基金 | <br>
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-5">
+              <p class="u-align-right u-custom-item u-text u-text-default u-text-5">
+                <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-hover-feature u-hover-none u-none u-text-body-alt-color u-text-hover-custom-color-5 u-btn-5" href="#"> 招募月工門勇者 | <br>
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-6">
+              <p class="u-align-right u-custom-item u-text u-text-default u-text-6">
+                <a class="u-btn u-button-link u-button-style u-custom-font u-hover-feature u-none u-text-body-alt-color u-text-hover-custom-color-5 u-btn-6" href="#"> 招募月工門公主| <br>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </section>
+    
+    
+    
+    
+    <section class="u-backlink u-clearfix u-grey-80">
+      <p class="u-text"><span>This site was created with the </span>
+        <a class="u-link" href="https://nicepage.com/" target="_blank" rel="nofollow"><span>Nicepage</span>
+        </a>
+      </p>
+    </section>
+  
+</body></html>
