@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>@shiaowei.fake - Instagram</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #fafafa;
+      color: #262626;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 2rem;
+      border-bottom: 1px solid #dbdbdb;
+      background: white;
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 2rem;
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .username {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    .stats {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .bio {
+      margin-top: 0.5rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 4px;
+      padding: 4px;
+    }
+    .grid img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      display: block;
+      background: #eee;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <img src="images/avatar.jpg" alt="avatar" class="avatar" />
+    <div class="info">
+      <div class="username">shiaowei.fake</div>
+      <div class="stats">
+        <div><strong>7</strong> posts</div>
+        <div><strong>10.8k</strong> followers</div>
+        <div><strong>1</strong> following</div>
+      </div>
+      <div class="bio">
+        構築家 / 月工門美學代言人<br>
+        重新定義門的開闔方式 🚪<br>
+        👉 <a href="../shiaowei-site/index.html">前往主頁</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <img src="images/photo1.jpg" alt="post1" />
+    <img src="images/photo2.jpg" alt="post2" />
+    <img src="images/photo3.jpg" alt="post3" />
+    <img src="images/photo4.jpg" alt="post4" />
+    <img src="images/photo5.jpg" alt="post5" />
+    <img src="images/photo6.png" alt="post6" />
+    <img src="images/photo7.jpg" alt="post7" />
+  </div>
+
+  <div class="footer">
+    ⓒ 2025 Instagram from Meta – This is a parody fan page for ShiaoWei
+  </div>
+
+</body>
+</html>

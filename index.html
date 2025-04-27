@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShiaoWei Inc.</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: sans-serif;
+      background: white; color: #333;
+    }
+    .hero {
+      position: relative;
+      width: 100%; height: 480px;
+      background: url('images/persol_bg.png') center/cover no-repeat;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background-color: rgba(255,255,255,0.6);
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center; text-align: center;
+    }
+    .hero-overlay h1 {
+      font-size: 3rem; font-weight: 300; margin-bottom: 1rem;
+    }
+    .hero-overlay p {
+      font-size: 0.9rem; color: #666;
+    }
+    nav {
+      display: flex; justify-content: flex-end; gap: 1.5rem;
+      padding: 1rem 2rem; border-bottom: 1px solid #ddd;
+      font-size: 0.9rem; color: #666;
+    }
+    nav a { color: inherit; text-decoration: none; }
+    nav a:hover { color: #000; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.75rem;
+      padding: 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .square {
+      aspect-ratio: 1 / 1;
+      background: #f5f5f5;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+    .square img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    .overlay img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+    .overlay .close {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 700px; margin: 4rem auto; padding: 0 1rem; text-align: center;
+    }
+    footer {
+      margin-top: 4rem; text-align: center;
+      color: #aaa; padding-bottom: 2rem;
+    }
+    button {
+      background: #333; color: white;
+      padding: 0.6rem 1.2rem; border: none;
+      border-radius: 8px; cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-overlay">
+      <h1>はたらいて、<br/>笑おう。</h1>
+      <p>ShiaoWei Inc. | 重新定義月工門</p>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#portfolio">サービス紹介</a>
+    <a href="#about">会社情報</a>
+    <a href="#recruit">採用情報</a>
+    <a href="#">プレスルーム</a>
+    <a href="IG.html">Instagram</a>
+  </nav>
+
+  <main id="portfolio" class="gallery">
+    <div class="square" onclick="showImage('images/photo1.jpg')"><img src="images/photo1.jpg" alt="自拍肌肉裙子照" /></div>
+    <div class="square" onclick="showImage('images/photo2.jpg')"><img src="images/photo2.jpg" alt="坐捷運美女照" /></div>
+    <div class="square" onclick="showImage('images/photo3.jpg')"><img src="images/photo3.jpg" alt="自拍貓鬚特效照" /></div>
+    <div class="square" onclick="showImage('images/photo4.jpg')"><img src="images/photo4.jpg" alt="街舞裝扮照" /></div>
+    <div class="square" onclick="showImage('images/photo5.jpg')"><img src="images/photo5.jpg" alt="廣告牆合成照" /></div>
+    <div class="square" onclick="showImage('images/photo6.png')"><img src="images/photo6.png" alt="Coin Master 肛門照" /></div>
+    <div class="square" onclick="showImage('images/photo7.jpg')"><img src="images/photo7.jpg" alt="肛門崩潰名言照" /></div>
+  </main>
+
+  <section id="about">
+    <p>
+      私たちは、月工門とは単なる構造ではなく、未来への入り口だと信じています。
+      ShiaoWei は、その扉を通じて、創造・視覚・自己表現の新しい地平を切り拓きます。
+    </p>
+  </section>
+
+  <section id="recruit">
+    <h3>ShiaoWeiと一緒に働きませんか？</h3>
+    <p>現在募集はありませんが、あらゆる形式の門の応募を歓迎します。</p>
+    <button>お問い合わせ</button>
+  </section>
+
+  <footer>
+    ⓒ 2025 ShiaoWei. All Rights Reserved. | 月工門計画株式会社
+  </footer>
+
+  <div id="overlay" class="overlay" onclick="hideImage()">
+    <span class="close">&times;</span>
+    <img id="overlay-img" src="" alt="full" />
+  </div>
+
+  <script>
+    function showImage(src) {
+      const overlay = document.getElementById('overlay');
+      const img = document.getElementById('overlay-img');
+      img.src = src;
+      overlay.style.display = 'flex';
+    }
+    function hideImage() {
+      document.getElementById('overlay').style.display = 'none';
+    }
+    document.querySelector('.close').addEventListener('click', hideImage);
+  </script>
+</body>
+</html>
