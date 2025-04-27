@@ -45416,7 +45416,7 @@ a.u-link.u-text-hover-grey-90:hover {
   font-family: "Noto Sans JP";
   font-weight: 500;
   font-size: 0.625rem;
-  margin: 0 385px 0 auto;
+  margin: 0 215px 0 auto;
   padding: 0;
 }
 
@@ -45424,7 +45424,7 @@ a.u-link.u-text-hover-grey-90:hover {
   font-family: "Noto Sans JP";
   font-weight: 500;
   font-size: 0.625rem;
-  margin: -14px 330px 0 auto;
+  margin: -14px 160px 0 auto;
   padding: 0;
 }
 
@@ -45432,7 +45432,7 @@ a.u-link.u-text-hover-grey-90:hover {
   font-family: "Noto Sans JP";
   font-weight: 500;
   font-size: 0.625rem;
-  margin: -14px 255px 0 auto;
+  margin: -14px 85px 0 auto;
   padding: 0;
 }
 
@@ -45440,7 +45440,7 @@ a.u-link.u-text-hover-grey-90:hover {
   font-family: "Noto Sans JP";
   font-weight: 500;
   font-size: 0.625rem;
-  margin: -14px 170px 0 auto;
+  margin: -14px 0 0 auto;
   padding: 0;
 }
 
@@ -45448,7 +45448,7 @@ a.u-link.u-text-hover-grey-90:hover {
   font-family: "Noto Sans JP";
   font-weight: 500;
   font-size: 0.625rem;
-  margin: -14px 85px 0 auto;
+  margin: -14px 613px 0 auto;
   padding: 0;
 }
 
@@ -45456,7 +45456,7 @@ a.u-link.u-text-hover-grey-90:hover {
   font-family: "Noto Sans JP";
   font-weight: 500;
   font-size: 0.625rem;
-  margin: -14px 0 0 auto;
+  margin: -14px 528px 0 auto;
   padding: 0;
 }
 @media (max-width: 1399px) {
@@ -45469,32 +45469,19 @@ a.u-link.u-text-hover-grey-90:hover {
   }
 
   .u-header .u-btn-1 {
-    margin-right: 286px;
+    margin-right: 138px;
   }
 
   .u-header .u-btn-2 {
-    margin-top: -14px;
-    margin-right: 167px;
-    margin-left: 65px;
-  }
-
-  .u-header .u-btn-3 {
-    margin-right: 92px;
-    margin-left: 120px;
-  }
-
-  .u-header .u-btn-4 {
-    margin-right: 7px;
-    margin-left: 195px;
+    margin-top: 20px;
   }
 
   .u-header .u-btn-5 {
-    margin-right: 0;
-    margin-left: 280px;
+    margin-right: 195px;
   }
 
   .u-header .u-btn-6 {
-    margin-left: 365px;
+    margin-right: 110px;
   }
 }
 @media (max-width: 1199px) {
@@ -45508,27 +45495,48 @@ a.u-link.u-text-hover-grey-90:hover {
 
   .u-header .u-btn-1 {
     transition-duration: 0.5s;
-  }
-
-  .u-header .u-btn-2 {
-    margin-right: 27px;
-  }
-
-  .u-header .u-btn-3 {
-    margin-right: 0;
-  }
-
-  .u-header .u-btn-4 {
-    margin-right: 0;
+    margin-right: 108px;
   }
 }
 @media (max-width: 991px) {
+  .u-header .u-image-1 {
+    height: 76px;
+    left: auto;
+    bottom: auto;
+    right: auto;
+    top: auto;
+  }
+
   .u-header .u-list-1 {
     width: calc(((100% - 720px) / 2) + 720px);
   }
 
   .u-header .u-container-layout-1 {
     padding-left: 30px;
+  }
+
+  .u-header .u-btn-1 {
+    margin-right: 0;
+  }
+
+  .u-header .u-btn-2 {
+    margin-right: 334px;
+  }
+
+  .u-header .u-btn-3 {
+    margin-right: 259px;
+  }
+
+  .u-header .u-btn-4 {
+    margin-right: 174px;
+  }
+
+  .u-header .u-btn-5 {
+    margin-right: 369px;
+  }
+
+  .u-header .u-btn-6 {
+    margin-right: 284px;
   }
 }
 @media (max-width: 767px) {
@@ -45546,44 +45554,76 @@ a.u-link.u-text-hover-grey-90:hover {
 
   .u-header .u-btn-2 {
     margin-right: 0;
-    margin-left: auto;
   }
 
   .u-header .u-btn-3 {
-    margin-left: auto;
-  }
-
-  .u-header .u-btn-4 {
-    margin-left: 35px;
-  }
-
-  .u-header .u-btn-5 {
-    margin-left: 120px;
-  }
-
-  .u-header .u-btn-6 {
-    margin-left: 205px;
-  }
-}
-@media (max-width: 575px) {
-  .u-header .u-list-1 {
-    width: calc(((100% - 340px) / 2) + 340px);
-  }
-
-  .u-header .u-btn-1 {
+    margin-top: 20px;
     margin-right: 0;
   }
 
   .u-header .u-btn-4 {
-    margin-left: auto;
+    margin-right: 460px;
   }
 
   .u-header .u-btn-5 {
-    margin-left: auto;
+    margin-right: 495px;
   }
 
   .u-header .u-btn-6 {
-    margin-left: 5px;
+    margin-right: 410px;
+  }
+}
+@media (max-width: 575px) {
+   .u-header {
+    min-height: 78px;
+  }
+
+  .u-header .u-image-1 {
+    margin-top: 1px;
+    margin-bottom: 0;
+  }
+
+  .u-header .u-list-1 {
+    width: 262px;
+    margin-top: -62px;
+    margin-bottom: 32px;
+  }
+
+  .u-header .u-repeater-1 {
+    min-height: 31px;
+  }
+
+  .u-header .u-container-layout-1 {
+    padding: 0;
+  }
+
+  .u-header .u-btn-1 {
+    margin-right: 140px;
+  }
+
+  .u-header .u-btn-2 {
+    margin-top: -14px;
+    margin-right: 85px;
+  }
+
+  .u-header .u-btn-3 {
+    margin-top: -14px;
+    margin-right: 10px;
+  }
+
+  .u-header .u-btn-4 {
+    margin-top: 0;
+    margin-right: 165px;
+  }
+
+  .u-header .u-btn-5 {
+    margin-top: -14px;
+    margin-right: 10px;
+  }
+
+  .u-header .u-btn-6 {
+    margin-top: -14px;
+    margin-right: 85px;
   }
 }
  .u-footer {
