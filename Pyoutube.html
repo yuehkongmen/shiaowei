@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>Pyoutube - 吃屎吧你 feat. 你這廢物</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #181818;
+      color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #202020;
+      color: #ff0000;
+      padding: 12px 20px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    main {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+    .video-placeholder img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .custom-player {
+      background: #121212;
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    .player-ui {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 5px;
+    }
+    .player-ui button {
+      background: #ff0000;
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .player-ui input[type=range] {
+      flex: 1;
+    }
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 20px 0 5px;
+    }
+    .uploader {
+      font-size: 14px;
+      color: #aaaaaa;
+    }
+    .description {
+      margin-top: 20px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+    .comments {
+      margin-top: 30px;
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 6px;
+    }
+    .comment {
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #333;
+    }
+    .comment-user {
+      font-weight: bold;
+      color: #dcdcaa;
+    }
+    .comment-text {
+      margin-top: 5px;
+    }
+  .main {
+  flex: 1;
+  min-width: 0;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+  align-items: flex-start;
+}
+</style>
+</head>
+<body>
+  <header>Pyoutube</header>
+  <div class="container" style="display: flex; gap: 20px; max-width: 1200px; margin: 30px auto; padding: 0 20px; align-items: flex-start;">
+  <div class="main" style="flex: 1;">
+    <div class="video-placeholder">
+      <img src="A_hand-drawn_digital_illustration_features_a_close.png" alt="吃屎吧你封面圖">
+    </div>
+    <div class="custom-player">
+      <audio id="audio-player" onplay="incrementPlayCount()">
+        <source src="吃屎吧你.mp3" type="audio/mpeg">
+        您的瀏覽器不支援 audio 元素。
+      </audio>
+      <div class="player-ui">
+        <button onclick="togglePlay()" id="play-btn">▶</button>
+        <input type="range" id="progress" value="0" step="0.1">
+        <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+      </div>
+      <div id="play-count" style="font-size: 14px; color: #ccc; margin-top: 8px;">播放次數：0</div>
+    </div>
+    <div class="title">吃屎吧你 feat. 你這廢物</div>
+    <div class="uploader">副標：當你還敢提要求的時候…</div>
+    <div class="uploader">發布者：Pyoutube Official · 觀看次數：69,420 次 · 4 月 29 日</div>
+    <div class="description">
+      完整曲風融合 Jules Gaia 式 funk/swing 節奏，
+      原音狠話強勢回歸！
+
+      🎤 主唱：你走開啦、你怎麼敢提要求啊、坐我腦公
+      🔥 Hook：「吃屎吧你」
+      👣 喜歡的話記得按 PyThumb！
+
+      🔗 <a href="index.html" style="color:#4ea1f3; text-decoration: none;">月工門音樂</a>
+    </div>
+    <div class="comments">
+      <div class="comment">
+        <div class="comment-user">鍵盤狠人</div>
+        <div class="comment-text">這句「你憑什麼」我 loop 十遍都不膩。</div>
+      </div>
+      <div class="comment">
+        <div class="comment-user">崩潰大學生</div>
+        <div class="comment-text">剛被教授嗆完馬上來這邊療癒自己 😭</div>
+      </div>
+      <div class="comment">
+        <div class="comment-user">社會邊緣音控組</div>
+        <div class="comment-text">這不是音樂，是我靈魂的出口。</div>
+      </div>
+      <div class="comment">
+        <div class="comment-user">PTT潛水十年會員</div>
+        <div class="comment-text">請問這有實體黑膠嗎？我想收藏。</div>
+      </div>
+      <div class="comment">
+        <div class="comment-user">狠話教材愛好者</div>
+        <div class="comment-text">希望高中表演比賽可以用這首。</div>
+      </div>
+      <div class="comment">
+        <div class="comment-user">熱愛狠話的人</div>
+        <div class="comment-text">這首直接封神，笑瘋 🤣</div>
+      </div>
+      <div class="comment">
+        <div class="comment-user">躺平專業戶</div>
+        <div class="comment-text">坐我腦公那段完全不給我活路</div>
+      </div>
+      <div class="comment">
+        <div class="comment-user">彈性疲乏</div>
+        <div class="comment-text">請問哪裡可以下載當鬧鐘音效？</div>
+      </div>
+    </div>
+  </div>
+  <aside style="width: 300px; background-color: #2a2a2a; padding: 20px; border-radius: 8px;">
+  <div style="margin-bottom: 16px;">
+    <img src="images/photo1.jpg" alt="縮圖" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; margin-bottom: 6px;">
+    <div style="font-weight: bold; color: #f1f1f1;">放過我吧你｜精神崩潰 Remastered</div>
+    <div style="font-size: 13px; color: #cccccc;">觀看次數：52,000 · 1 週前</div>
+  </div>
+  <div style="margin-bottom: 16px;">
+    <img src="images/photo2.jpg" alt="縮圖" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; margin-bottom: 6px;">
+    <div style="font-weight: bold; color: #f1f1f1;">我不想努力了 feat. 躺平之神</div>
+    <div style="font-size: 13px; color: #cccccc;">觀看次數：88,888 · 3 天前</div>
+  </div>
+  <div style="margin-bottom: 16px;">
+    <img src="images/photo7.jpg" alt="縮圖" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; margin-bottom: 6px;">
+    <div style="font-weight: bold; color: #f1f1f1;">PTT鄉民全明星大合唱</div>
+    <div style="font-size: 13px; color: #cccccc;">觀看次數：999,999+ · 1 個月前</div>
+  </div>
+  <div style="margin-bottom: 16px;">
+    <img src="images/photo66.jpg" alt="縮圖" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; margin-bottom: 6px;">
+    <div style="font-weight: bold; color: #f1f1f1;">誰准你這樣說話？feat. 媽媽</div>
+    <div style="font-size: 13px; color: #cccccc;">觀看次數：77,777 · 剛剛</div>
+  </div>
+</aside>
+</div>
+<script>
+    let playCount = 0;
+    function incrementPlayCount() {
+      playCount++;
+      document.getElementById('play-count').textContent = `播放次數：${playCount}`;
+    }
+    const audio = document.getElementById('audio-player');
+    const playBtn = document.getElementById('play-btn');
+    const progress = document.getElementById('progress');
+    const currentTimeDisplay = document.getElementById('current-time');
+    const durationDisplay = document.getElementById('duration');
+
+    function togglePlay() {
+      if (audio.paused) {
+        audio.play();
+        playBtn.textContent = '⏸';
+      } else {
+        audio.pause();
+        playBtn.textContent = '▶';
+      }
+    }
+
+    audio.addEventListener('loadedmetadata', () => {
+      durationDisplay.textContent = formatTime(audio.duration);
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      progress.value = audio.currentTime;
+      progress.max = audio.duration;
+      currentTimeDisplay.textContent = formatTime(audio.currentTime);
+    });
+
+    progress.addEventListener('input', () => {
+      audio.currentTime = progress.value;
+    });
+
+    function formatTime(sec) {
+      const minutes = Math.floor(sec / 60);
+      const seconds = Math.floor(sec % 60);
+      return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    }
+  </script>
+</body>
+</html>
